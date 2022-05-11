@@ -1,7 +1,7 @@
+import re
+from .corpus_loader import word_list, name_list
 
 alpha = "abcdefghijklmnopqrstuvwxyz"
-
-
 
 def encrypt(message, key):
   final_message = ''
@@ -31,4 +31,23 @@ def decrypt(message, key):
 
 
 def crack(message):
-  pass
+  key = 0
+  percentage = 0
+  for a in alpha:
+    verified_words=0
+    key += 1
+    cracked_msg = decrypt(message, key)
+    cracked_msg_verify = cracked_msg.split(' ')
+
+    for word in cracked_msg_verify:
+      word = re.sub(r'[^A-Za-z]+','', word)
+      if word.lower() in word_list or word in name_list:
+        verified_words += 1
+      else:
+        pass
+    percentage = int(verified_words // len(cracked_msg_verify) * 100)
+    if percentage >= 50:
+      return cracked_msg
+  if percentage < 50: 
+    return ""
+  
