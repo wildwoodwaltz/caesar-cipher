@@ -12,7 +12,7 @@
 
     Python3.10
     .venv for Python3
-    
+    pytest
 
 ### How to initialize/run application
 
