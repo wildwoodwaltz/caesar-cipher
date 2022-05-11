@@ -1,7 +1,4 @@
 
-import keyword
-
-
 alpha = "abcdefghijklmnopqrstuvwxyz"
 
 
@@ -29,6 +26,7 @@ def encrypt(message, key):
   return final_message
 
 def decrypt(message, key):
+
   return encrypt(message, -key)
 
 
