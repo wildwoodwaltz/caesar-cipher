@@ -32,7 +32,7 @@ def test_with_whitespace():
 
 
 def test_with_non_alpha():
-    actual = encrypt("Gimme a 1!", 1)
+    actual = encrypt("Gimme a 1!", 27)
     expected = "Hjnnf b 1!"
     assert actual == expected
 
